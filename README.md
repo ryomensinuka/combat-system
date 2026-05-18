@@ -1,18 +1,18 @@
-# ⚔️ combat-system (Roblox / Luau)
+# combat-system (Roblox / Luau)
 
-Sistema de combate modular para Roblox Studio, escrito em Luau com `--!strict`.  
-Projetado para ser limpo, seguro e fácil de expandir em projetos maiores.
+Sistema de combate modular para o roblox Studio, escrito em Luau com `--!strict`.  
+Projetei para ser clean, seguro e fácil de expandir em certos projetos maiores.
 
 ---
 
-## ✨ Funcionalidades
+## Funcionalidades
 
-- **Validação server-side** — todas as ações são verificadas no servidor (range, cooldown, alvo válido)
-- **Sistema de combo** — até 3 hits encadeados com multiplicadores de dano crescentes
-- **Cálculo de dano isolado** — módulo separado com suporte a crítico e redução por armadura
-- **Efeitos de status** — Stun, Poison e Burn, sem stack do mesmo efeito
-- **Feedback visual** — floating damage numbers com animação (diferente para crítico)
-- **Detecção de alvo por raycast** — mira pelo centro da tela
+- **Validação server-side** - todas as ações são verificadas no servidor (range, cooldown, alvo válido)
+- **Sistema de combo** - até 3 hits encadeados com multiplicadores de dano crescentes
+- **Cálculo de dano isolado** - módulo separado com suporte a crítico e redução por armadura
+- **Efeitos de status** - Stun, Poison e Burn, sem stack do mesmo efeito
+- **Feedback visual** - floating damage numbers com animação (diferente para crítico)
+- **Detecção de alvo por raycast** - mira pelo centro da tela
 
 ---
 
@@ -21,15 +21,15 @@ Projetado para ser limpo, seguro e fácil de expandir em projetos maiores.
 ```
 combat-system/
 └── src/
-    ├── CombatService.luau      # ServerScript — lógica central e validações
-    ├── DamageCalculator.luau   # ModuleScript — matemática de dano e crítico
-    ├── StatusEffects.luau      # ModuleScript — efeitos de status (Stun, Poison, Burn)
-    └── CombatClient.luau       # LocalScript — input do jogador e feedback visual
+    ├── CombatService.luau      # ServerScript - lógica central e validações
+    ├── DamageCalculator.luau   # ModuleScript - matemática de dano e crítico
+    ├── StatusEffects.luau      # ModuleScript - efeitos de status (Stun, Poison, Burn)
+    └── CombatClient.luau       # LocalScript - input do jogador e feedback visual
 ```
 
 ---
 
-## 🚀 Como usar no Roblox Studio
+## Como usar no Roblox Studio
 
 ### 1. Criar os RemoteEvents
 
@@ -58,9 +58,9 @@ Você pode definir esses atributos no `Character` para personalizar por classe:
 
 ---
 
-## ⚙️ Balanceamento
+## Balanceamento
 
-Todos os valores de gameplay estão centralizados em tabelas no topo de cada módulo — fácil de ajustar sem mexer na lógica:
+Todos os valores de gameplay estão centralizados em tabelas no topo de cada módulo, fácil de ajustar sem mexer na logica:
 
 ```lua
 -- CombatService.luau
@@ -78,10 +78,10 @@ local CRIT_MULTIPLIER   = 1.75
 
 ---
 
-## 🛡️ Segurança
+## Segurança
 
 - Toda validação roda **exclusivamente no servidor**
-- O cliente nunca define o valor do dano — apenas solicita o ataque
+- O cliente nunca define o valor do dano, apenas solicita o ataque
 - Impossível atacar a si mesmo ou alvos fora do range
 
 ---
